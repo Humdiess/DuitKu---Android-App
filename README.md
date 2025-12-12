@@ -1,50 +1,145 @@
-# Welcome to your Expo app 👋
+# DuitKu - Personal Finance Manager
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![Platform](https://img.shields.io/badge/Platform-Android-green)
+![Framework](https://img.shields.io/badge/Framework-React%20Native%20Expo-blue)
+![Design](https://img.shields.io/badge/Design-Material%20Design%203-purple)
 
-## Get started
+DuitKu adalah aplikasi manajemen keuangan pribadi yang modern dan intuitif, dibangun dengan React Native Expo dan mengadopsi Material Design 3 (Material You) dengan inspirasi dari Samsung One UI.
 
-1. Install dependencies
+## ✨ Fitur Utama
 
-   ```bash
-   npm install
-   ```
+- 📊 **Dashboard Interaktif** - Lihat ringkasan keuangan Anda dengan visualisasi yang jelas
+- 💰 **Manajemen Transaksi** - Catat pemasukan dan pengeluaran dengan mudah
+- 🏷️ **Kategori Kustom** - Buat dan kelola kategori transaksi dengan icon dan warna pilihan
+- 💵 **Budget Tracking** - Atur dan pantau budget per kategori dengan alert otomatis
+- 📈 **Laporan Keuangan** - Analisis pengeluaran dengan grafik dan statistik detail
+- 🌙 **Dark Mode** - Dukungan penuh untuk mode gelap yang nyaman di mata
+- 🔐 **Autentikasi Aman** - Login dan registrasi dengan enkripsi token
 
-2. Start the app
+## 🎨 Design System
 
-   ```bash
-   npx expo start
-   ```
+Aplikasi ini menggunakan **Material Design 3** (Material You) dengan inspirasi dari **Samsung One UI**:
 
-In the output, you'll find options to open the app in a
+- **Color Palette**: Material You dynamic colors dengan primary blue (#A8C7FA untuk dark, #0061A4 untuk light)
+- **Typography**: Material Design Type Scale dengan font Roboto
+- **Elevation**: Material Design elevation system (5 levels)
+- **Spacing**: 8dp grid system untuk konsistensi layout
+- **Components**: Material Design 3 components dengan ripple effects
+- **Status Bar**: Solid background dengan proper spacing (tidak transparan)
+- **Margins**: Konsisten 16dp horizontal margins di semua halaman
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🚀 Tech Stack
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Frontend (Mobile)
+- **React Native** - Framework untuk cross-platform mobile development
+- **Expo** - Development platform untuk React Native
+- **TypeScript** - Type-safe JavaScript
+- **React Navigation** - Routing dan navigasi
+- **TanStack Query** - Data fetching dan caching
+- **AsyncStorage** - Local storage untuk token dan data
 
-## Get a fresh project
+### Backend
+- **Laravel 11** - PHP framework untuk REST API
+- **MySQL** - Database relational
+- **JWT Authentication** - Token-based authentication
 
-When you're ready, run:
+## 📋 Prerequisites
+
+Sebelum memulai, pastikan Anda telah menginstall:
+
+- **Node.js** (v18 atau lebih baru)
+- **npm** atau **yarn**
+- **Expo CLI** (`npm install -g expo-cli`)
+- **Android Studio** (untuk Android emulator) atau perangkat Android fisik
+
+## 🛠️ Installation
+
+### 1. Clone Repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/yourusername/duitku.git
+cd duitku
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install Dependencies
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Setup Environment Variables
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Buat file `.env` di root project dan tambahkan:
 
-## Join the community
+```env
+EXPO_PUBLIC_API_BASE_URL=https://duitku.agriconnect.my.id/api/v1
+```
 
-Join our community of developers creating universal apps.
+Sesuaikan URL dengan backend API Anda.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 4. Run Development Server
+
+```bash
+# Start Expo development server
+npx expo start
+
+# Atau untuk langsung ke Android
+npm run android
+```
+
+## 📂 Project Structure
+
+```
+DuitKu/
+├── app/                      # Expo Router pages
+│   ├── (auth)/              # Authentication screens
+│   ├── (tabs)/              # Main app tabs
+│   ├── modals/              # Modal screens
+│   └── _layout.tsx          # Root layout
+├── components/              # Reusable components
+│   └── ui/                  # UI components
+├── constants/               # Constants and theme
+│   └── theme.ts            # Material Design 3 theme
+├── contexts/               # React contexts
+├── services/               # API services
+└── utils/                  # Utility functions
+```
+
+## 🎯 Key Features
+
+### Dashboard
+- Total pemasukan, pengeluaran, dan saldo
+- Grafik perubahan keuangan
+- 5 transaksi terbaru
+- Quick actions
+
+### Transactions
+- Filter berdasarkan tipe
+- Pull-to-refresh
+- Detail transaksi per kategori
+
+### Categories
+- Kategori custom dengan icon dan warna
+- Statistik per kategori
+- Pisah pemasukan dan pengeluaran
+
+### Budgets
+- Set budget per kategori
+- Progress bar dengan color coding
+- Alert threshold
+
+## 🔐 Authentication
+
+Menggunakan JWT token-based authentication dengan Laravel backend.
+
+## 📄 License
+
+MIT License
+
+## 👨‍💻 Developer
+
+Developed with ❤️ for personal finance management
+
+---
+
+**Note**: Aplikasi ini masih dalam tahap pengembangan aktif.

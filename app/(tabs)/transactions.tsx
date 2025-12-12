@@ -9,15 +9,15 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import React, { useState } from 'react';
 import {
-    RefreshControl,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 
-import { darkColors, lightColors, spacing, typography } from '@/constants/theme';
+import { darkColors, lightColors, spacing, statusBarHeight, typography } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import api from '@/services/api';
 import { formatDateShort } from '@/utils/date';
@@ -67,8 +67,8 @@ export default function TransactionsScreen() {
             style={[
               styles.filterButton,
               {
-                backgroundColor: filter === 'all' ? colors.accentColor : colors.glassBg,
-                borderColor: colors.glassBorder,
+                backgroundColor: filter === 'all' ? colors.primary : colors.bgSurface,
+                borderColor: colors.outline,
               },
             ]}
             onPress={() => setFilter('all')}
@@ -86,8 +86,8 @@ export default function TransactionsScreen() {
             style={[
               styles.filterButton,
               {
-                backgroundColor: filter === 'income' ? colors.systemGreen : colors.glassBg,
-                borderColor: colors.glassBorder,
+                backgroundColor: filter === 'income' ? colors.systemGreen : colors.bgSurface,
+                borderColor: colors.outline,
               },
             ]}
             onPress={() => setFilter('income')}
@@ -105,8 +105,8 @@ export default function TransactionsScreen() {
             style={[
               styles.filterButton,
               {
-                backgroundColor: filter === 'expense' ? colors.systemRed : colors.glassBg,
-                borderColor: colors.glassBorder,
+                backgroundColor: filter === 'expense' ? colors.systemRed : colors.bgSurface,
+                borderColor: colors.outline,
               },
             ]}
             onPress={() => setFilter('expense')}
@@ -177,13 +177,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: spacing.lg,
-    paddingTop: spacing.xxl + spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingTop: statusBarHeight + spacing.md,
     paddingBottom: spacing.md,
   },
   title: {
-    ...typography.title,
-    fontSize: 32,
+    ...typography.headlineLarge,
+    fontWeight: '600',
   },
   filters: {
     flexDirection: 'row',
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listContent: {
-    padding: spacing.lg,
+    padding: spacing.md,
   },
   bottomSpacer: {
     height: 110,

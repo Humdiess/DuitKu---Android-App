@@ -93,7 +93,7 @@ export default function AddCategoryModal() {
                 style={[
                   styles.typeButton,
                   type === 'income' && { backgroundColor: colors.systemGreen },
-                  type !== 'income' && { backgroundColor: colors.glassBg, borderColor: colors.glassBorder, borderWidth: 1 },
+                  type !== 'income' && { backgroundColor: colors.bgSurface, borderColor: colors.outline, borderWidth: 1 },
                 ]}
                 onPress={() => setType('income')}
               >
@@ -105,7 +105,7 @@ export default function AddCategoryModal() {
                 style={[
                   styles.typeButton,
                   type === 'expense' && { backgroundColor: colors.systemRed },
-                  type !== 'expense' && { backgroundColor: colors.glassBg, borderColor: colors.glassBorder, borderWidth: 1 },
+                  type !== 'expense' && { backgroundColor: colors.bgSurface, borderColor: colors.outline, borderWidth: 1 },
                 ]}
                 onPress={() => setType('expense')}
               >
@@ -138,7 +138,7 @@ export default function AddCategoryModal() {
                   style={[
                     styles.iconItem,
                     selectedIcon === icon && { backgroundColor: colors.accentColor },
-                    selectedIcon !== icon && { backgroundColor: colors.glassBg, borderColor: colors.glassBorder, borderWidth: 1 },
+                    selectedIcon !== icon && { backgroundColor: colors.bgSurface, borderColor: colors.outline, borderWidth: 1 },
                   ]}
                   onPress={() => setSelectedIcon(icon)}
                 >

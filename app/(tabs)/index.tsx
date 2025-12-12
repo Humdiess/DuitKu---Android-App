@@ -17,7 +17,7 @@ import {
     View,
 } from 'react-native';
 
-import { darkColors, lightColors, spacing, typography } from '@/constants/theme';
+import { darkColors, lightColors, spacing, statusBarHeight, typography } from '@/constants/theme';
 import { useAuth } from '@/contexts/AuthContext';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import api from '@/services/api';
@@ -87,7 +87,7 @@ export default function DashboardScreen() {
           </View>
           <TouchableOpacity 
             onPress={logout}
-            style={[styles.logoutButton, { backgroundColor: colors.glassBg, borderColor: colors.glassBorder }]}
+            style={[styles.logoutButton, { backgroundColor: colors.bgSurface, borderColor: colors.outline }]}
           >
             <Ionicons name="log-out-outline" size={22} color={colors.textPrimary} />
           </TouchableOpacity>
@@ -190,8 +190,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    padding: spacing.lg,
-    paddingTop: spacing.xxl + spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingTop: statusBarHeight + spacing.md,
   },
   header: {
     flexDirection: 'row',
@@ -200,12 +200,12 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xl,
   },
   greeting: {
-    ...typography.caption,
+    ...typography.bodyMedium,
     fontSize: 14,
   },
   userName: {
-    ...typography.title,
-    fontSize: 32,
+    ...typography.headlineLarge,
+    fontWeight: '600',
     marginTop: spacing.xs,
   },
   logoutButton: {
@@ -231,12 +231,11 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   sectionTitle: {
-    ...typography.headline,
-    fontSize: 20,
-    fontWeight: '700',
+    ...typography.titleLarge,
+    fontWeight: '600',
   },
   seeAll: {
-    ...typography.caption,
+    ...typography.labelMedium,
     fontSize: 14,
     fontWeight: '600',
   },

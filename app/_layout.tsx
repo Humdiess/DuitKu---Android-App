@@ -65,7 +65,11 @@ function RootLayoutNav() {
           }} 
         />
       </Stack>
-      <StatusBar style="auto" />
+      <StatusBar 
+        style={colorScheme === 'dark' ? 'light' : 'dark'}
+        backgroundColor={colorScheme === 'dark' ? '#000000' : '#FAFAFA'}
+        translucent={false}
+      />
     </ThemeProvider>
   );
 }

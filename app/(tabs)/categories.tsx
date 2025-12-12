@@ -89,9 +89,9 @@ export default function CategoriesScreen() {
                   {incomeCategories
                     .filter((category: any) => category && category.id)
                     .map((category: any) => (
-                      <View key={category.id} style={[styles.categoryPill, { borderColor: colors.glassBorder }]}>
+                      <View key={category.id} style={[styles.categoryPill, { borderColor: colors.outline }]}>
                         <View style={styles.pillLeft}>
-                          <View style={[styles.iconCircle, { backgroundColor: colors.glassBg }]}>
+                          <View style={[styles.iconCircle, { backgroundColor: colors.bgSurface }]}>
                             <Text style={styles.categoryIcon}>{category.icon || '📁'}</Text>
                           </View>
                           <View style={styles.pillInfo}>
@@ -130,9 +130,9 @@ export default function CategoriesScreen() {
                   {expenseCategories
                     .filter((category: any) => category && category.id)
                     .map((category: any) => (
-                      <View key={category.id} style={[styles.categoryPill, { borderColor: colors.glassBorder }]}>
+                      <View key={category.id} style={[styles.categoryPill, { borderColor: colors.outline }]}>
                         <View style={styles.pillLeft}>
-                          <View style={[styles.iconCircle, { backgroundColor: colors.glassBg }]}>
+                          <View style={[styles.iconCircle, { backgroundColor: colors.bgSurface }]}>
                             <Text style={styles.categoryIcon}>{category.icon || '📁'}</Text>
                           </View>
                           <View style={styles.pillInfo}>
@@ -172,13 +172,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: spacing.lg,
+    paddingHorizontal: spacing.md,
     paddingTop: spacing.xxl + spacing.md,
     paddingBottom: spacing.md,
   },
   title: {
-    ...typography.title,
-    fontSize: 32,
+    ...typography.headlineLarge,
+    fontWeight: '600',
   },
   list: {
     flex: 1,
@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xl,
   },
   sectionTitle: {
-    ...typography.headline,
+    ...typography.titleMedium,
     fontSize: 18,
     fontWeight: '700',
     marginBottom: spacing.md,
@@ -228,17 +228,17 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   categoryName: {
-    ...typography.body,
+    ...typography.bodyLarge,
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 2,
   },
   categoryCount: {
-    ...typography.caption,
+    ...typography.bodySmall,
     fontSize: 12,
   },
   categoryAmount: {
-    ...typography.headline,
+    ...typography.titleMedium,
     fontSize: 16,
     fontWeight: '700',
   },

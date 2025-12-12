@@ -16,7 +16,7 @@ import {
   View,
 } from 'react-native';
 
-import { borderRadius, darkColors, lightColors, spacing, typography } from '@/constants/theme';
+import { borderRadius, darkColors, lightColors, spacing, statusBarHeight, typography } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import api from '@/services/api';
 import { formatCurrency } from '@/utils/currency';
@@ -129,7 +129,7 @@ export default function BudgetsScreen() {
                       <View
                         style={[
                           styles.progressBar,
-                          { backgroundColor: colors.fillPrimary },
+                          { backgroundColor: colors.glassBg },
                         ]}
                       >
                         <View
@@ -173,13 +173,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: spacing.lg,
-    paddingTop: spacing.xxl + spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingTop: statusBarHeight + spacing.md,
     paddingBottom: spacing.md,
   },
   title: {
-    ...typography.title,
-    fontSize: 32,
+    ...typography.headlineLarge,
+    fontWeight: '600',
   },
   list: {
     flex: 1,

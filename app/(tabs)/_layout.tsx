@@ -62,7 +62,7 @@ export default function TabLayout() {
                 borderTopWidth: 1.5,
                 borderLeftWidth: 1.5,
                 borderRightWidth: 1.5,
-                borderColor: colors.glassBorder,
+                borderColor: colors.outline,
                 shadowColor: '#000',
                 shadowOffset: { width: 0, height: -4 },
                 shadowOpacity: 0.15,

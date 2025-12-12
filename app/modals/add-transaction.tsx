@@ -19,6 +19,7 @@ import {
 
 import { Button } from '@/components/ui/Button';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { Toast } from '@/components/ui/Toast';
 import { borderRadius, darkColors, lightColors, spacing, typography } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import api from '@/services/api';
@@ -103,7 +104,7 @@ export default function AddTransactionModal() {
                 style={[
                   styles.typeButton,
                   type === 'income' && { backgroundColor: colors.systemGreen },
-                  type !== 'income' && { backgroundColor: colors.glassBg, borderColor: colors.glassBorder, borderWidth: 1 },
+                  type !== 'income' && { backgroundColor: colors.bgSurface, borderColor: colors.outline, borderWidth: 1 },
                 ]}
                 onPress={() => { setType('income'); setCategoryId(null); }}
               >
@@ -115,7 +116,7 @@ export default function AddTransactionModal() {
                 style={[
                   styles.typeButton,
                   type === 'expense' && { backgroundColor: colors.systemRed },
-                  type !== 'expense' && { backgroundColor: colors.glassBg, borderColor: colors.glassBorder, borderWidth: 1 },
+                  type !== 'expense' && { backgroundColor: colors.bgSurface, borderColor: colors.outline, borderWidth: 1 },
                 ]}
                 onPress={() => { setType('expense'); setCategoryId(null); }}
               >
@@ -161,7 +162,7 @@ export default function AddTransactionModal() {
                   style={[
                     styles.categoryItem,
                     categoryId === cat.id && { backgroundColor: colors.accentColor },
-                    categoryId !== cat.id && { backgroundColor: colors.glassBg, borderColor: colors.glassBorder, borderWidth: 1 },
+                    categoryId !== cat.id && { backgroundColor: colors.bgSurface, borderColor: colors.outline, borderWidth: 1 },
                   ]}
                   onPress={() => setCategoryId(cat.id)}
                 >

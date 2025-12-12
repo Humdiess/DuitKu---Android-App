@@ -1,9 +1,9 @@
 /**
  * GlassCard Component
- * Reusable card with strong frosted glass effect
+ * Premium frosted glass effect with blur
  */
 
-import { borderRadius, darkColors, lightColors, shadows } from '@/constants/theme';
+import { borderRadius, darkColors, elevation, lightColors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { BlurView } from 'expo-blur';
 import React, { ReactNode } from 'react';
@@ -19,7 +19,7 @@ interface GlassCardProps {
 export function GlassCard({ 
   children, 
   style, 
-  intensity = 80,
+  intensity = 90,
   padding = 16 
 }: GlassCardProps) {
   const colorScheme = useColorScheme();
@@ -37,6 +37,7 @@ export function GlassCard({
             borderColor: colors.glassBorder,
             padding,
           },
+          elevation.level2,
         ]}
       >
         {children}
@@ -47,12 +48,11 @@ export function GlassCard({
 
 const styles = StyleSheet.create({
   container: {
-    overflow: 'hidden',
     borderRadius: borderRadius.lg,
+    overflow: 'hidden',
   },
   blurContainer: {
     borderRadius: borderRadius.lg,
-    borderWidth: 1.5,
-    ...shadows.md,
+    borderWidth: 1,
   },
 });

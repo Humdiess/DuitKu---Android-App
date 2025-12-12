@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    paddingHorizontal: spacing.lg,
+    paddingHorizontal: spacing.md,
     paddingTop: spacing.xxl + spacing.md,
     paddingBottom: spacing.md,
   },
@@ -198,12 +198,12 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
   selector: {
-    paddingHorizontal: spacing.lg,
+    paddingHorizontal: spacing.md,
     marginBottom: spacing.md,
   },
   selectorButton: {
     paddingVertical: spacing.md,
-    paddingHorizontal: spacing.lg,
+    paddingHorizontal: spacing.md,
     borderRadius: 14,
     borderWidth: 1,
     alignItems: 'center',

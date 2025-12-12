@@ -102,7 +102,7 @@ export default function AddBudgetModal() {
                   style={[
                     styles.categoryItem,
                     categoryId === cat.id && { backgroundColor: colors.accentColor },
-                    categoryId !== cat.id && { backgroundColor: colors.glassBg, borderColor: colors.glassBorder, borderWidth: 1 },
+                    categoryId !== cat.id && { backgroundColor: colors.bgSurface, borderColor: colors.outline, borderWidth: 1 },
                   ]}
                   onPress={() => setCategoryId(cat.id)}
                 >
@@ -138,7 +138,7 @@ export default function AddBudgetModal() {
                   style={[
                     styles.periodButton,
                     period === p && { backgroundColor: colors.accentColor },
-                    period !== p && { backgroundColor: colors.glassBg, borderColor: colors.glassBorder, borderWidth: 1 },
+                    period !== p && { backgroundColor: colors.bgSurface, borderColor: colors.outline, borderWidth: 1 },
                   ]}
                   onPress={() => setPeriod(p as any)}
                 >
